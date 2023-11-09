@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "5c796ee7-5174-40f3-bbc5-699a02c87179",
+		"name": "Dog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dog List",
+			"id": "382c4122-c52a-4b0a-a702-fa8e337ce387",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://dog.ceo/api/breeds/list/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Breed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify-retriever is within list\", function () {\r",
+							"    // Parse the response JSON\r",
+							"    var responseData = pm.response.json();\r",
+							"    \r",
+							"    // Checks if the 'retriever' breed exists is in the list \r",
+							"      if (responseData.message && responseData.message.retriever) {\r",
+							"        pm.expect(true).to.equal(true); \r",
+							"    } else {\r",
+							"        pm.expect(true).to.equal(false); \r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "6baefb75-e921-41e2-86ee-cbf462938ff4"
+					}
+				}
+			],
+			"id": "8b96381d-08af-454b-9830-93fb55a47a23",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://dog.ceo/api/breeds/list/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Retriever List",
+			"id": "773c9a2f-5a53-4f95-895b-415b69af7cab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://dog.ceo/api/breed/retriever/list"
+			},
+			"response": []
+		},
+		{
+			"name": "Random Image Of Golden Retriever",
+			"id": "67266936-6ebf-4072-917c-3999ca175c8c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://dog.ceo/api/breed/retriever/golden/images/random/"
+			},
+			"response": []
+		}
+	]
+}
